@@ -8,7 +8,12 @@ const spaceMono = Space_Mono({
   subsets: ['latin'],
 });
 
-export const Profile = () => {
+interface ProfileProps {
+  data: any;
+}
+
+export const Profile = (props: ProfileProps) => {
+  const { data } = props;
   return (
     <div className={`profile_container ${spaceMono.className}`}>
       <style jsx>{`
@@ -72,12 +77,12 @@ export const Profile = () => {
       <div className="right_Section">
         <div>
           <h1 className="profile_title">Hello, I&apos;m</h1>
-          <h1 className="profile_name">Paavan</h1>
+          <h1 className="profile_name">{data.name}</h1>
           <h1 className="profile_title">I&apos;m a</h1>
           <h1 className="profile_title">
             <Typewriter
               options={{
-                strings: ['Developer', 'Designer', 'Student'],
+                strings: data.profession,
                 autoStart: true,
                 loop: true,
               }}

@@ -5,8 +5,10 @@
 /.pnp
 .pnp.js
 
+.DS_Store
 # testing
 /coverage
+secrets.json
 
 # next.js
 /.next/
@@ -27,7 +29,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
-
+.env
 # vercel
 .vercel
 

@@ -13,7 +13,12 @@ const merriweather = Merriweather({
   subsets: ['latin'],
 });
 
-export const Navbar = () => {
+interface NavbarProps {
+  data: any;
+}
+
+export const Navbar = (props: NavbarProps) => {
+  const { data } = props;
   const [showIcon, setShowIcon] = React.useState(false);
   return (
     <div
@@ -44,7 +49,7 @@ export const Navbar = () => {
           className={luxurious.className}
           style={{ fontSize: '2rem', fontWeight: 800, marginLeft: '1rem' }}
         >
-          Paavan Khunt
+          {data.fullname}
         </div>
       </div>
       <div className={merriweather.className}>

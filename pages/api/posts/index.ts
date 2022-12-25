@@ -3,6 +3,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
   data: any[];
+  credentials?: any;
 };
 
 export default async function posts(
@@ -11,6 +12,7 @@ export default async function posts(
 ) {
   const auth = await google.auth.getClient({
     scopes: ['https://www.googleapis.com/auth/spreadsheets.readonly'],
+    credentials: req.body.credentials,
   });
 
   const sheets = google.sheets({ version: 'v4', auth });

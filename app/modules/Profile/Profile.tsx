@@ -35,6 +35,7 @@ export const Profile = (props: ProfileProps) => {
           display: flex;
           justify-content: center;
           align-items: center;
+          animation: mover 5s ease-in-out;
         }
         .background_svg {
           position: absolute;
@@ -61,6 +62,15 @@ export const Profile = (props: ProfileProps) => {
           font-size: 1rem;
           flex: 1;
         }
+
+        @keyframes mover {
+          0% {
+            transform: translateY(20rem);
+          }
+          100% {
+            transform: translateY(0);
+          }
+        }
       `}</style>
       <div className="left_Section">
         {/*my image*/}
@@ -71,6 +81,7 @@ export const Profile = (props: ProfileProps) => {
             width={400}
             height={400}
             className="profile_image"
+            style={{ animation: 'mover 5s  ease-in-out' }}
           />
         </div>
       </div>
